@@ -63,7 +63,7 @@ const Review = () => {
                   I could not have asked for a better trvel places than Uttar
                   pradesh.It took us to very good places. Thanks to Rove India.
                 </p>
-                <div className="text-center">
+                <div className="text-center">    
                   <Rating
                     name="half-rating"
                     defaultValue={2.5}
