@@ -92,7 +92,7 @@ const handleInputChange = (index, value) => {
 
     const verifyOtp = async () => {
       setIssubmit(true)
-      const enteredOtp = otpInputs.join("");
+      const enteredOtp = otpInputs.join("");         
       const otpdecode = atob(matchcode);
       //  console.log(otpdecode, "llkllkllk");
       //  console.log(enteredOtp, "otoooooo");
