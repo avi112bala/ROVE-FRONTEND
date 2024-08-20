@@ -145,7 +145,7 @@ const Signin = () => {
                     />
                   ))}
                 </div>
-                <div class="mt-4">
+                <div class="mt-4">    
                   <button
                     class="btn btn-danger px-4 validate"
                     onClick={verifyOtp}
