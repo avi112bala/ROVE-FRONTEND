@@ -127,7 +127,7 @@ const Signin = () => {
                 </h6>
                 <div>
                   <span>A code has been sent to your email:  </span>
-                  <strong>{email}</strong>
+                  <strong>{email}</strong>     
                 </div>
                 <div
                   id="otp"
