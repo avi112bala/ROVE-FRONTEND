@@ -6,8 +6,6 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@fontsource/roboto": "^4.5.8",
-    "@material-ui/lab": "^4.0.0-alpha.61",
-    "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.14",
     "@mui/styled-engine-sc": "https://pkg.csb.dev/mui-org/material-ui/commit/97b8bd28/@mui/styled-engine-sc",
     "@testing-library/jest-dom": "^5.16.5",

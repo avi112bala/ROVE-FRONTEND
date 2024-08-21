@@ -120,7 +120,7 @@ const handleInputChange = (index, value) => {
             // setIssubmit(false);
           } else {
             // Authentication failed
-            swal("Invalid OTP. Please try again.");
+            swal("Invalid OTP. Please try again.");      
           }         
         } catch (error) {
           console.log(error);    
