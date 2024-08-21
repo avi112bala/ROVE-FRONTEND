@@ -123,7 +123,7 @@ const handleInputChange = (index, value) => {
             swal("Invalid OTP. Please try again.");
           }         
         } catch (error) {
-          console.log(error);
+          console.log(error);    
         }
       } else {
         swal("Invalid OTP. Please try again.");
