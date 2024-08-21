@@ -71,7 +71,7 @@ import { Package } from "../component/Package";
       <Services/>
       <Gallery/>
       <Review/>
-      <Contact/>
+      <Contact/>    
     </>
   );
 }
