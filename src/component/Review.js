@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Rating from "@material-ui/lab/Rating";
+import Rating from "@mui/material/Rating";
 import Slider from "react-slick";
 import pic1 from './image/pic1.png'
 import pic2 from "./image/pic2.png";

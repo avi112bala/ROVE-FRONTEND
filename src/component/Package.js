@@ -1,5 +1,5 @@
 import React from 'react'
-import Rating from "@material-ui/lab/Rating";
+import Rating from "@mui/material/Rating";
 import package1 from './images/package1.jpg'
 import package2 from './images/package2.jpg'
 import package3 from "./images/package3.jpg";
@@ -246,7 +246,7 @@ export const Package = () => {
 
             <div className="col">
               {" "}
-              <div className="card mb-3" style={{ width: "24rem" }}>
+              <div className="card" style={{ width: "24rem" }}>
                 <img
                   src={package5}
                   className="card-img-top"
