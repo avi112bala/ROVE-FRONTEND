@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.13.0",
-    "@emotion/styled": "^11.13.0",
     "@fontsource/roboto": "^5.0.14",
     "@mui/icons-material": "^5.16.7",
     "@mui/material": "^5.16.7",
@@ -23,7 +21,6 @@
     "react-scripts": "5.0.1",
     "react-scroll": "^1.9.0",
     "react-slick": "^0.30.2",
-    "react-slick-slider": "^0.15.10",
     "react-toastify": "^10.0.5",
     "react-video-js-player": "^1.1.1",
     "reactstrap": "^9.2.2",

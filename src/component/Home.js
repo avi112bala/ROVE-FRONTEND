@@ -1,5 +1,6 @@
-import React from 'react'
-import Slider from 'react-slick-slider'
+
+import React, { useState } from "react";
+import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import vid1 from './video/vid1.mp4'
@@ -20,17 +21,20 @@ import { Package } from "../component/Package";
 
 
  const Home = () => {
-    const settings = {
-      // dots: true,
-      arrows: true,
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: true,
-      speed: 1000,
-      autoplaySpeed: 5000,
-      cssEase: "linear",
-    };
+  
+  const [settings, setSettings] = useState({
+    arrows: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 1000,
+    autoplaySpeed: 5000,
+    cssEase: "linear",
+
+    // pauseOnHover: true,
+  });
+   
   return (
     <>
       <div className="slide">
