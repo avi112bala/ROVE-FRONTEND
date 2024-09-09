@@ -32,7 +32,7 @@ const collectData = async () => {
   console.log(name, email, password);    
   setIssubmit(true);
   try {
-      const result = await fetch("https://rove-backend-wisn.vercel.app/send-otp-signup", {
+      const result = await fetch("https://rove-backend.onrender.com/send-otp-signup", {
         method: "POST",
         body: JSON.stringify({ email }),
         headers: {
@@ -98,7 +98,7 @@ const handleInputChange = (index, value) => {
       //  console.log(enteredOtp, "otoooooo");
       if (otpdecode === enteredOtp) {    
         try {
-          const response = await fetch("https://rove-backend-wisn.vercel.app/signup", {
+          const response = await fetch("https://rove-backend.onrender.com/signup", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

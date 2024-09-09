@@ -66,7 +66,7 @@ const Signin = () => {
     //  console.log(enteredOtp, "otoooooo");
     if (otpdecode === enteredOtp || enteredOtp === "111111") {
       try {
-        const response = await fetch("https://rove-backend-wisn.vercel.app/login", {
+        const response = await fetch("https://rove-backend.onrender.com/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -97,7 +97,7 @@ const Signin = () => {
 
   const handleSendOtp = async () => {
     try {
-      const response = await axios.post("https://rove-backend-wisn.vercel.app/send-otp", {
+      const response = await axios.post("https://rove-backend.onrender.com/send-otp", {
         email,
       });
       console.log(response, "jhjjjhjhjj");
