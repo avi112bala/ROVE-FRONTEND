@@ -52,6 +52,7 @@ import Manglor from './component/Cities/Karnataka/Manglor';
 import Banglor from './component/Cities/Karnataka/Banglor';
 import Signup from './component/Signup';
 import Logout from './component/Logout';
+import State from './component/Admin/State';
 // import PrivateComponent from './component/PrivateComponent';
 
 function App() {
@@ -112,6 +113,7 @@ function App() {
             <Route path="/kabini" element={<Kabini />}></Route>
             <Route path="/manglor" element={<Manglor />}></Route>
             <Route path="/banglor" element={<Banglor />}></Route>
+            <Route path="/add-state" element={<State/>}></Route>
           {/* </Route> */}
           <Route path="/signin" element={<Signin />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
