@@ -53,6 +53,8 @@ import Banglor from './component/Cities/Karnataka/Banglor';
 import Signup from './component/Signup';
 import Logout from './component/Logout';
 import State from './component/Admin/State';
+import SinglePackagepage from './component/Admin/SinglePackagepage';
+import AddSinglePackage from './component/Admin/AddSinglePackage';
 // import PrivateComponent from './component/PrivateComponent';
 
 function App() {
@@ -114,6 +116,8 @@ function App() {
             <Route path="/manglor" element={<Manglor />}></Route>
             <Route path="/banglor" element={<Banglor />}></Route>
             <Route path="/add-state" element={<State/>}></Route>
+            <Route path="/single-package-page/:id" element={<SinglePackagepage/>}></Route>
+            <Route path='/add-single-city' element={<AddSinglePackage/>}></Route>
           {/* </Route> */}
           <Route path="/signin" element={<Signin />}></Route>
           <Route path="/signup" element={<Signup />}></Route>

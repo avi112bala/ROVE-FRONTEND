@@ -32,7 +32,7 @@ const collectData = async () => {
   console.log(name, email, password);    
   setIssubmit(true);
   try {
-      const result = await fetch("https://rove-backend.onrender.com/send-otp-signup", {
+      const result = await fetch("http://localhost:5000/send-otp-signup", {
         method: "POST",
         body: JSON.stringify({ email }),
         headers: {
@@ -100,7 +100,7 @@ const handleInputChange = (index, value) => {
       //  console.log(enteredOtp, "otoooooo");
       if (otpdecode === enteredOtp) {    
         try {
-          const response = await fetch("https://rove-backend.onrender.com/signup", {
+          const response = await fetch("http://localhost:5000/signup", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
