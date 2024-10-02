@@ -87,8 +87,7 @@ const SinglePlace = () => {
                       <h5 className="card-title" style={{ fontSize: "3rem" }}>
                         {data.name}
                       </h5>
-
-                     
+                      <p className="card-text">{data.desp}</p>
                     </div>
                   </div>
                 </div>
