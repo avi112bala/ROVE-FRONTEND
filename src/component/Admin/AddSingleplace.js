@@ -1,19 +1,19 @@
 import axios from "axios";
 import DeleteIcon from "@mui/icons-material/Delete";
 import React, { useEffect, useState } from "react";
-import "../style.css"
+import "../style.css";
 import Swalpop from "../../Sweet";
 
-const AddSinglePackage = () => {
+const AddSingleplace = () => {
   const [formdata, setFormdata] = useState({
     name: "",
     desp: "",
     rate: "",
     stateimage: null,
   });
-    const [selectedState, setSelectedState] = useState("");
+  const [selectedState, setSelectedState] = useState("");
   const [state, setState] = useState([]);
-  const [alldata,setAlldata]=useState([]);
+  const [alldata, setAlldata] = useState([]);
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormdata((prevState) => ({
@@ -38,7 +38,7 @@ const AddSinglePackage = () => {
     formDataToSubmit.append("selectedState", selectedState);
     try {
       const response = await axios.post(
-        "https://rove-backend.onrender.com/api/singlecity",
+        "https://rove-backend.onrender.com/api/singleplace",
         formDataToSubmit,
         {
           headers: {
@@ -46,8 +46,8 @@ const AddSinglePackage = () => {
           },
         }
       );
-      console.log(response.data.message); 
-      Swalpop("City Added Successfully","success")
+      console.log(response.data.message);
+      Swalpop("City Added Successfully", "success");
       fetchStates();
     } catch (error) {
       console.error("Error submitting the form", error);
@@ -57,7 +57,7 @@ const AddSinglePackage = () => {
   const deletestate = async (stateId) => {
     try {
       const response = await axios.post(
-        `https://rove-backend.onrender.com/api/deletecity/${stateId}`
+        `https://rove-backend.onrender.com/api/deleteplace/${stateId}`
       );
       console.log(response.data.message);
       fetchStates(); // State deleted successfully
@@ -68,7 +68,7 @@ const AddSinglePackage = () => {
 
   const fetchStates = async () => {
     try {
-      const response = await axios.get("https://rove-backend.onrender.com/api/allcity");
+      const response = await axios.get("https://rove-backend.onrender.com/api/allplaces");
       setState(response.data);
       console.log(response.data);
     } catch (error) {
@@ -76,30 +76,30 @@ const AddSinglePackage = () => {
     }
   };
 
-   const allfetchStates = async () => {
-     try {
-       const response = await axios.get("https://rove-backend.onrender.com/api/states");
-       setAlldata(response.data);
-       console.log(response.data);
-     } catch (error) {
-       console.error("Error fetching states", error);
-     }
-   };
-    const handleChange = (e) => {
-      setSelectedState(e.target.value); // Update selected state value
-    };
-  
+  const allfetchcity = async () => {
+    try {
+      const response = await axios.get("https://rove-backend.onrender.com/api/allcity");
+      setAlldata(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error fetching states", error);
+    }
+  };
+  const handleChange = (e) => {
+    setSelectedState(e.target.value); // Update selected state value
+  };
+
   useEffect(() => {
     fetchStates();
-    allfetchStates();
+    allfetchcity();
   }, []);
   return (
     <div className="container mt-4">
-      <h2>Submit City Information</h2>
+      <h2>Submit Place Information</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
-            City Name
+            Place Name
           </label>
           <input
             type="text"
@@ -114,7 +114,7 @@ const AddSinglePackage = () => {
 
         <div className="mb-3">
           <label htmlFor="desp" className="form-label">
-            City Description
+            Place Description
           </label>
           <textarea
             className="form-control"
@@ -129,7 +129,7 @@ const AddSinglePackage = () => {
 
         <div className="mb-3">
           <label htmlFor="rate" className="form-label">
-            City Rate
+            Place Rate
           </label>
           <input
             type="number"
@@ -141,19 +141,19 @@ const AddSinglePackage = () => {
             required
           />
         </div>
-        <label htmlFor="state-select">Choose a state:</label>
+        <label htmlFor="state-select">Choose a City:</label>
         <select id="state-select" value={selectedState} onChange={handleChange}>
           <option value="">--Please choose an option--</option>
           {alldata.map((state) => (
             <option key={state._id} value={state._id}>
-              {state.statename}
+              {state.name}
             </option>
           ))}
         </select>
 
         <div className="mb-3">
           <label htmlFor="stateimage" className="form-label">
-            Upload City Image
+            Upload Place Image
           </label>
           <input
             type="file"
@@ -171,7 +171,7 @@ const AddSinglePackage = () => {
         </button>
       </form>
 
-      <h2>All City</h2>
+      <h2>All Place</h2>
       <table class="table">
         <thead>
           <tr>
@@ -209,4 +209,4 @@ const AddSinglePackage = () => {
   );
 };
 
-export default AddSinglePackage;
+export default AddSingleplace;

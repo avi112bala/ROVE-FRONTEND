@@ -1,35 +1,31 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 
-const SinglePackagepage = () => {
+const SinglePlace = () => {
   const navigate = useNavigate();
-    const {id,slug}=useParams();
-    const decodedText = decodeURIComponent(slug);
-    const [singledata,setSingledata]=useState([])
+  const { id, slug } = useParams();
+  const decodedText = decodeURIComponent(slug);
+  const [singledata, setSingledata] = useState([]);
 
+  const fetchStates = async () => {
+    try {
+      const response = await axios.get(
+        `https://rove-backend.onrender.com/api/single-place/${id}`
+      );
+      setSingledata(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error fetching states", error);
+    }
+  };
+  useEffect(() => {
+    fetchStates();
+  }, []);
 
-     const fetchStates = async () => {
-       try {
-         const response = await axios.get(
-           `https://rove-backend.onrender.com/api/single-states/${id}`
-         );
-         setSingledata(response.data);
-         console.log(response.data);
-       } catch (error) {
-         console.error("Error fetching states", error);
-       }
-     };
-     useEffect(()=>{
-        fetchStates();
-     },[])
-
-     const handlechange1 =(id,slug)=>{
-        navigate(`/single-place-page/${id}/${encodeURIComponent(slug)}`);
-     }
-     const handlechange =()=>{
-        navigate("/package")
-     }
+  const handlechange = () => {
+    navigate("/package");
+  };
   return (
     <>
       {/* Title  */}
@@ -92,14 +88,7 @@ const SinglePackagepage = () => {
                         {data.name}
                       </h5>
 
-                      <button
-                        type="button"
-                        class="btn btn-warning"
-                        style={{ color: "white", fontWeight: "500 " }}
-                        onClick={() => handlechange1(data._id,data.name)}
-                      >
-                        Explore {data.name}
-                      </button>
+                     
                     </div>
                   </div>
                 </div>
@@ -121,6 +110,6 @@ const SinglePackagepage = () => {
       </div>
     </>
   );
-}
+};
 
-export default SinglePackagepage
+export default SinglePlace;

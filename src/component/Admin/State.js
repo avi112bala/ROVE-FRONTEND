@@ -34,7 +34,7 @@ const State = () => {
 
         try {
             const response = await axios.post(
-              "http://localhost:5000/api/states",
+              "https://rove-backend.onrender.com/api/states",
               formDataToSubmit,
               {
                 headers: {
@@ -54,7 +54,7 @@ const State = () => {
     const deletestate = async (stateId) => {
       try {
         const response = await axios.post(
-          `http://localhost:5000/api/deletestates/${stateId}`
+          `https://rove-backend.onrender.com/api/deletestates/${stateId}`
         );
         console.log(response.data.message); 
         fetchStates();// State deleted successfully
@@ -67,7 +67,7 @@ const State = () => {
       const fetchStates = async () => {
         try {
           const response = await axios.get(
-            "http://localhost:5000/api/states"
+            "https://rove-backend.onrender.com/api/states"
           );
           setState(response.data);
           console.log(response.data);
@@ -165,10 +165,10 @@ const State = () => {
                 <td>{i++}</td>
                 <td>
                   <img
-                    src={`http://localhost:5000/${data.stateimage}`}
+                    src={`https://rove-backend.onrender.com/${data.stateimage}`}
                     alt={state.statename}
                     className="img-fluid round-circle"
-                    style={{ width: "5%", height: "5%" }}
+                    style={{ width: "50%", height: "75%" }}
                   />
                 </td>
                 <td>{data.statename}</td>

@@ -12,7 +12,7 @@ const Contact = () => {
     // console.log(name,email,Msg)
    const data={name,email,Msg};
 
-   const response = await fetch("http://localhost:5000/send-email", {
+   const response = await fetch("https://rove-backend.onrender.com/send-email", {
      method: "POST",
      headers: {
        "Content-Type": "application/json",

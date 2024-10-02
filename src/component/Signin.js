@@ -66,7 +66,7 @@ const Signin = () => {
     //  console.log(enteredOtp, "otoooooo");
     if (otpdecode === enteredOtp || enteredOtp === "111111") {
       try {
-        const response = await fetch("http://localhost:5000/login", {
+        const response = await fetch("https://rove-backend.onrender.com/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -97,7 +97,7 @@ const Signin = () => {
 
   const handleSendOtp = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/send-otp", {
+      const response = await axios.post("https://rove-backend.onrender.com/send-otp", {
         email,
       });
       console.log(response, "jhjjjhjhjj");

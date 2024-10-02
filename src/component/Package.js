@@ -16,7 +16,7 @@ export const Package = () => {
 
   const fetchStates = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/states");
+      const response = await axios.get("https://rove-backend.onrender.com/api/states");
       setState(response.data);
       console.log(response.data);
     } catch (error) {
@@ -28,8 +28,8 @@ export const Package = () => {
   }, []);
   const navigate = useNavigate();
 
-  function handlechange(id) {
-    navigate(`/single-package-page/${id}`);
+  function handlechange(id,name) {
+    navigate(`/single-package-page/${id}/${encodeURIComponent(name)}`);
   }
   
 
@@ -61,7 +61,7 @@ export const Package = () => {
                       style={{ width: "24rem", height: "33.14rem" }}
                     >
                       <img
-                        src={`http://localhost:5000/${data.stateimage}`}
+                        src={`https://rove-backend.onrender.com/${data.stateimage}`}
                         className="card-img-top"
                         alt="..."
                         style={{ width: "24rem", height: "15rem" }}
@@ -79,16 +79,15 @@ export const Package = () => {
                             precision={0.5}
                           />
                         </div>
-                      
-                          <button
-                            type="button"
-                            class="btn btn-warning"
-                            style={{ color: "white", fontWeight: "500 " }}
-                            onClick={()=>handlechange(data._id)}
-                          >
-                            Explore uttar Pradesh
-                          </button>
-                 
+
+                        <button
+                          type="button"
+                          class="btn btn-warning"
+                          style={{ color: "white", fontWeight: "500 " }}
+                          onClick={() => handlechange(data._id, data.statename)}
+                        >
+                          Explore uttar Pradesh
+                        </button>
                       </div>
                     </div>
                   </div>

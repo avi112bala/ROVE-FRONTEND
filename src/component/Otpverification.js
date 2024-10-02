@@ -8,7 +8,7 @@ const Otpverification = () => {
 
     const handleSendOtp=async ()=>{
         try{
-            const response = await axios.post("http://localhost:5000/send-otp",{email});
+            const response = await axios.post("https://rove-backend.onrender.com/send-otp",{email});
             setMessage(response.data.message);
         }catch(e){
             console.log(e);
