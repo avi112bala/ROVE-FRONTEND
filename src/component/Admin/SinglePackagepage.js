@@ -88,7 +88,7 @@ const SinglePackagepage = () => {
                       style={{ width: "24rem", height: "15rem" }}
                     />
                     <div className="card-body">
-                      <h5 className="card-title" style={{ fontSize: "3rem" }}>
+                      <h5 className="card-title" style={{ fontSize: "2rem" }}>
                         {data.name}
                       </h5>
 

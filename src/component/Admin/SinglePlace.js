@@ -68,14 +68,14 @@ const SinglePlace = () => {
 
       {/* Title  */}
       <div className="container text-center">
-        <div className="row row-package">
+        <div className="row">
           {singledata.map((data) => {
             return (
               <>
                 <div className="col">
                   <div
                     className="card mb-3"
-                    style={{ width: "24rem", height: "25rem" }}
+                    style={{ width: "24rem", height: "auto" }}
                   >
                     <img
                       src={`https://rove-backend.onrender.com/${data.stateimage}`}
@@ -84,13 +84,14 @@ const SinglePlace = () => {
                       style={{ width: "24rem", height: "15rem" }}
                     />
                     <div className="card-body">
-                      <h5 className="card-title" style={{ fontSize: "3rem" }}>
+                      <h5 className="card-title" style={{ width: "100%" }}>
                         {data.name}
                       </h5>
                       <p className="card-text">{data.desp}</p>
                     </div>
                   </div>
                 </div>
+                
               </>
             );
           })}
