@@ -96,8 +96,8 @@ const handleInputChange = (index, value) => {
       setIssubmit(true)
       const enteredOtp = otpInputs.join("");         
       const otpdecode = atob(matchcode);
-      //  console.log(otpdecode, "llkllkllk");
-      //  console.log(enteredOtp, "otoooooo");
+       console.log(otpdecode, "llkllkllk");
+       console.log(enteredOtp, "otoooooo");
       if (otpdecode === enteredOtp) {    
         try {
           const response = await fetch("https://rove-backend.onrender.com/signup", {
@@ -108,10 +108,10 @@ const handleInputChange = (index, value) => {
             body: JSON.stringify({ email ,name}),
           });
           // console.log(response,"success");
-          // const data = await response.json();
+          const data = await response.json();
         // console.log(data, "success");
-          if (response.Response === '1') {
-            const data = await response.json();
+          if (data.Response === "1") {
+            // const data = await response.json();
             // Authentication successful
             localStorage.setItem("user", JSON.stringify(data));
             localStorage.setItem("token", JSON.stringify(data.token));
@@ -122,7 +122,7 @@ const handleInputChange = (index, value) => {
             // setIssubmit(false);
           } else {
             // Authentication failed
-            swal("Invalid OTP. Please try again.");      
+            swal("Invalid OTP. Please try again.");
           }         
         } catch (error) {
           console.log(error);    

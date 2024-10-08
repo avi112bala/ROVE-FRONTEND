@@ -165,7 +165,7 @@ const State = () => {
                 <td>{i++}</td>
                 <td>
                   <img
-                    src={`https://rove-backend.onrender.com/${data.stateimage}`}
+                    src={` /${data.stateimage}`}
                     alt={state.statename}
                     className="img-fluid round-circle"
                     style={{ width: "50%", height: "75%" }}
